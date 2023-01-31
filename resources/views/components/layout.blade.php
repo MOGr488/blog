@@ -9,8 +9,6 @@
     <title>@yield('title')</title>
 
 
-    <!-- Bootstrap core CSS -->
-<link href="/docs/4.5/dist/css/rtl/bootstrap.min.css" rel="stylesheet" integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -147,10 +145,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
     </style>
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <!-- Custom styles for this template -->
    <link rel="stylesheet" href="/css/app.css">
+
+
+
   </head>
   <body class="rtl">
     <div class="container">
