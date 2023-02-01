@@ -46,12 +46,12 @@ class Post extends Component
                   {{ $post->body }}
              
           </p>
-            
+          
               <h1>التعليقات</h1>
               @if(count($comments) == 0)
               <h3>لا يوجد تعليقات</h3>
               @else
-              @foreach($post->comments as $comment)
+              @foreach($comments as $comment)
               <h4>
                 {{$comment->name}}
               </h4>
@@ -64,7 +64,7 @@ class Post extends Component
               @endif
                 
                
-          
+              </div>
     </div>
 blade;
     }

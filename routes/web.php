@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\PostsController;
-use App\Models\Post;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Post;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentsController;
 
 
 /*
@@ -23,3 +24,5 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostsController::class);
+
+Route::post('/posts/{post}/comments', [CommentsController::class, 'store']);

@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Comment extends Model
 {
     use HasFactory;
+
+    public $fillable = ['name', 'body', 'post_id'];
+
     public function post()
     {
         return $this->belongsTo(Post::class);
