@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreComment;
 
 class CommentsController extends Controller
 {
     
-    public function store(Post $post)
+    public function store(StoreComment $request, Post $post)
     {
         Comment::create([
             'name' => request('name'),
