@@ -4,7 +4,7 @@
 
 <x-layout>
   <x-post :post="$post" :comments="$comments" class="font-weight-bold" />
-
+  <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">تعديل المقالة</a>
  
 
   

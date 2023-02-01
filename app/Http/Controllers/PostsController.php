@@ -36,10 +36,12 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validatePost();
         Post::create([
             'title' => request('title'),
             'body' => request('body'),
             'author' => request('author'),
+
 
         ]);
     
@@ -64,9 +66,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -76,9 +78,16 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Post $post)
     {
-        //
+        $this->validatePost();
+
+        $post->update([
+            'title'=> request('title'),
+            'body'=> request('body'),
+            'author'=> request('author')
+        ]);
+        return redirect('/posts/'. $post->id);
     }
 
     /**
@@ -90,5 +99,14 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function validatePost(){
+        request()->validate([
+            'title' =>'required|unique:posts|max:100',
+            'body' =>'required',
+            'author' =>'required',
+        ]);
+
     }
 }

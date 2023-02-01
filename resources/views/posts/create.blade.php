@@ -6,31 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css" integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
 
-    <title>Create Post</title>
+    <title>إنشاء مقالة جديدة</title>
 </head>
 <body>
     <div class="container">
-    <form action="/posts" method="POST">
-        @csrf
-        
-        <div class="form-group">
-            <label for="title">عنوان المقالة</label>
-            <input type="text" name="title" id="title" class="form-control">
-        </div>
+        <form action="/posts" method="POST">
+    <x-form />
+    <button type="submit" class="btn btn-primary">حفظ</button>
+</form>
 
-        <div class="form-group">
-            <label for="title">نص المقالة</label>
-            <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="title">كاتب المقالة</label>
-            <input type="text" name="author" id="author" class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-primary">حفظ</button>
-        
-    </form>
 </div>
 </body>
 </html>
