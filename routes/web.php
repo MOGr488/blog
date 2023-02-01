@@ -26,3 +26,8 @@ Route::get('/', function () {
 Route::resource('posts', PostsController::class);
 
 Route::post('/posts/{post}/comments', [CommentsController::class, 'store']);
+
+Route::get('/signup/{lang}', function($lang){
+    App::setlocale($lang);
+    return view('signup');
+});
