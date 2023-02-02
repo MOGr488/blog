@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CommentsController;
+use App\Mail\DiscountOffer;
+use Illuminate\Support\Facades\Mail;
 
 
 /*
@@ -30,4 +32,13 @@ Route::post('/posts/{post}/comments', [CommentsController::class, 'store']);
 Route::get('/signup/{lang}', function($lang){
     App::setlocale($lang);
     return view('signup');
+});
+
+Route::post('mail/', function(){
+   $email = request()->validate([
+        'email' => 'required|email'
+    ]);
+    
+    Mail::to($email)->send(new DiscountOffer());
+    return back();
 });
